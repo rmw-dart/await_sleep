@@ -2,20 +2,19 @@
 
 # await_sleep
 
-UPNP Port Forward
+async sleep
 
 ## use
 
 ```dart
-import 'package:await_sleep/await_sleep.dart';
+import 'package:await_sleep/init.dart';
 
 void main() async {
-  final upnp = UpnpPortForward((mapped) {
-    print("$mapped map");
-  });
-
-  upnp.map(11111);
-  upnp.map(22222);
+  var n = 0;
+  while (true) {
+    print(++n);
+    await sleep(n);
+  }
 }
 
 ```
